@@ -36,3 +36,20 @@ class Solution {
         
     }
 }
+
+      /* OR  */
+
+class Solution {
+    public int findClosestNumber(int[] nums) {
+        int min = 0;
+        for (int i = 1; i < nums.length; i++) {
+            if (Math.abs(nums[i]) < Math.abs(nums[min]))
+                min = i;
+            else if (Math.abs(nums[i]) == Math.abs(nums[min])) {
+                if (nums[i] > nums[min])
+                    min = i;
+            }
+        }
+        return nums[min];
+    }
+}
